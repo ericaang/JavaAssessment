@@ -6,7 +6,6 @@ import com.generation.service.CourseService;
 import com.generation.service.StudentService;
 import com.generation.utils.PrinterHelper;
 
-import javax.sound.midi.Soundbank;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -116,7 +115,7 @@ public class Main
             }
             System.out.println("Insert course grade for: " + course.getName());
 
-            Double grade = scanner.nextDouble();
+            double grade = scanner.nextDouble();
 
             //checking if grade is within range 0 - 6
             while (grade < 0 || grade > 6) {
