@@ -14,13 +14,13 @@ public class Student
     public Student( String id, String name, String email, Date birthDate )
     {
         super( id, name, email, birthDate );
-        enrolledCourses = new ArrayList<>();
-        courseGrade = new HashMap<>();
+        enrolledCourses = new ArrayList<>();    // stores the courses enrolled by the student
+        courseGrade = new HashMap<>();          // stores the grade for the enrolled courses
     }
 
     public void enrollToCourse( Course course )
     {
-        //TODO
+        //TODO add course to the enrolledCourses ArrayList
         if(!enrolledCourses.contains(course)){
             enrolledCourses.add(course);
         }
@@ -44,7 +44,7 @@ public class Student
 
     public Course findCourseById( String courseId )
     {
-        //TODO
+        //TODO return the course that corresponds to the courseId provided
        for( Course course: enrolledCourses){
            String courseCode = course.getCode();
 
@@ -60,15 +60,16 @@ public class Student
     @Override
     public List<Course> getEnrolledCourses()
     {
-        //TODO
+        //TODO return the list of courses enrolled
         return enrolledCourses;
     }
-
+    //This function sets the grade for the course and stores in the courseGrade HashMap
     public void setGrade(String courseId, double grade){
         if(courseGrade.containsKey(courseId))
         courseGrade.replace(courseId, grade);
         else courseGrade.put(courseId, grade);
     }
+    //This function gets the grade for the course
     public double getGrade(String courseId){
         if(courseGrade.containsKey(courseId))
             return courseGrade.get(courseId);
