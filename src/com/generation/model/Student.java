@@ -29,11 +29,11 @@ public class Student
     @Override
     public List<Course> findPassedCourses()
     {
-        ArrayList passCourses = new ArrayList<>();
+        ArrayList<Course> passCourses = new ArrayList<>();
         //TODO obtain list of courses that the student passed
         if (courseGrade != null){
             for (String courseId: courseGrade.keySet()){
-                if (courseGrade.get(courseId) >= 3){
+                if (courseGrade.get(courseId) >= PASS_MIN_GRADE){
                     passCourses.add(findCourseById(courseId));
                 }
             }

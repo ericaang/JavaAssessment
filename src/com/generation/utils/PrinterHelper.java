@@ -48,7 +48,7 @@ public class PrinterHelper
         } while(true);
 
         //Added a flag to get out of the do..while loop for exception handling
-        Boolean isError = false;
+        boolean isError;
         //declare birthDate outside the do..while loop so that it can be accessed outside the loop
         Date birthDate = new Date();
         do{
